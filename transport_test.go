@@ -301,7 +301,7 @@ func TestStandardHeaders(t *testing.T) {
 	for name, want := range map[string]string{
 		"X-Api-Key":  "bb_test_key",
 		"Accept":     "application/json",
-		"User-Agent": "budgetbakers-partner-sdk-go/0.2.0",
+		"User-Agent": "budgetbakers-partner-sdk-go/" + partner.Version,
 	} {
 		if got := h.Get(name); got != want {
 			t.Errorf("%s = %q, want %q", name, got, want)

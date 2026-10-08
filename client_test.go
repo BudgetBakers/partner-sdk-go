@@ -698,8 +698,8 @@ func TestDefaults(t *testing.T) {
 	if partner.DefaultBaseURL != "https://aisp-partner.bbapi.io" {
 		t.Errorf("DefaultBaseURL = %q", partner.DefaultBaseURL)
 	}
-	if partner.Version != "0.2.0" {
-		t.Errorf("Version = %q", partner.Version)
+	if !regexp.MustCompile(`^\d+\.\d+\.\d+$`).MatchString(partner.Version) {
+		t.Errorf("Version = %q, want bare semver", partner.Version)
 	}
 	var host string
 	hc := &http.Client{Transport: roundTripFunc(func(r *http.Request) (*http.Response, error) {

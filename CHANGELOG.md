@@ -6,6 +6,8 @@ SDK adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.2.1] - 2026-10-08
+
 ### Added
 
 - The Go server SDK, `github.com/budgetbakers/partner-sdk-go`: the whole
